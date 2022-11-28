@@ -5,7 +5,6 @@ from flask_cors import CORS
 
 import pickle
 
-
 app = Flask(__name__)
 CORS(app)
 
@@ -31,13 +30,8 @@ def add_number():
     # print("no_of_ingredients is ",no_of_ingredients)
 
     # ingredients = request_data['ingredients']
-    
-    
+
     df6 = pd.read_csv("./vizz.csv")
-
-    
-
-    
 
     print("THIS IS NOT GIVING ERROR")
     
@@ -61,9 +55,13 @@ def add_number():
     sc = StandardScaler()
 
     X_train=sc.fit_transform(X_train)
+
+
     pickle_model = pickle.load(open("./prediction.pkl","rb"))
+
+
     print("HERE 4")
-    grade=pickle_model.predict(sc.transform([[le1.transform([flavour]),le2.transform([dish]),calories,le3.transform([Meal_Type]),no_of_ingredients]]))
+    grade = pickle_model.predict(sc.transform([[le1.transform([flavour]),le2.transform([dish]),calories,le3.transform([Meal_Type]),no_of_ingredients]]))
     print("HERE 5")
     print("GRADE IS : ",grade)
 

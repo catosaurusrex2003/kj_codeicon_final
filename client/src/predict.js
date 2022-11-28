@@ -4,21 +4,13 @@ import { toast, Toaster } from "react-hot-toast";
 
 function Predict_page() {
 
-  const [bool, setBool] = useState(true);
+  const [bool, setBool] = useState(false);
 
   function flip_bool(){
     console.log("bool is fliping")
     setBool( (prev) => !prev )
   }
 
-
-
-  const array = [
-    { id: 0, payload: "ad" },
-    { id: 1, payload: "afsfd" },
-    { id: 2, payload: "addada" },
-    { id: 3, payload: "ad" },
-  ];
   const [showArr, setShowArr] = useState([]);
   const [temp, setTemp] = useState("");
   const [formData, setFormData] = useState({
@@ -54,7 +46,7 @@ function Predict_page() {
       ) {
         let res = await fetch("http://localhost:5000/predict", {
           method: "POST",
-          mode: "cors",
+          mode: "no-cors",
           headers: {
             Accept: "application/json, text/plain, /",
             "Content-Type": "application/json",
@@ -95,7 +87,7 @@ function Predict_page() {
         toast.error("pls fill all inputs");
       }
     } catch (err) {
-      alert("Please fill all inputs.");
+      alert(err);
     }
   };
 
