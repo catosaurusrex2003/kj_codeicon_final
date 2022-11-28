@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Analytic from "./analytic";
 import NavBar from "./navBar";
 import Predict_page from "./predict";
 import "./styles/app.css";
@@ -9,7 +10,11 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Predict_page />
+      <Routes>
+        <Route path = "/predict" element = {<Predict_page />}/>
+        <Route path = "/anal" element = {<Analytic />}/>
+      </Routes>
+      
     </div>
   );
 }

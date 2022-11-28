@@ -27,15 +27,16 @@ body {
   top: 8px;
   right: 0px;
 }
-.right-nav > p {
+.navbar_link {
   margin: 10px 20px;
   font-weight: 600;
   font-size: 22px;
   transition-duration: 200ms;
+  color:black;
+  /* REMOVE THE UNDERLINE */
 }
-.right-nav > p:hover {
+.navbar_link:hover {
   color: #0058cc;
-  font-size: 22px;
   text-decoration: underline;
 }
 
@@ -306,4 +307,8 @@ input:focus {
   outline: solid 2px #0058cc;
   /* background-color: rgb(217, 217, 217); */
   /* outline: none; */
+}
+
+.anal_img{
+  height : 200px
 }

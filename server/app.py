@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from flask import Flask,request,render_template
 from flask_cors import CORS
+import os
 
 import pickle
 
@@ -14,7 +15,6 @@ output=0
 @app.route("/")
 def hello_world():
     return "<h1>Server is LIVE !</h1>"
-
 
 @app.route("/predict", methods=['POST'])
 def add_number():
@@ -67,6 +67,18 @@ def add_number():
 
     return { "grade": grade[0] }
 
+
+@app.route("/anal", methods=['GET'])
+def analysis():
+    path = "C:\\Users\\mohammed mehdi\\OneDrive\\Desktop\\hackathons\\kj_codeicon_final\\client\\src\\analytic_images"
+    dir_list = os.listdir(path)
+    # SEABORN CODE HERE TO SAVE THER IMAGES
+    # FOR NOW IT IS HARDCODED
+    print(dir_list)
+
+    
+
+    return  dir_list
 
 if __name__ == "__main__":
  app.run(debug=True)

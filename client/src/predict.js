@@ -4,7 +4,7 @@ import { toast, Toaster } from "react-hot-toast";
 
 function Predict_page() {
 
-  const [bool, setBool] = useState(false);
+  const [bool, setBool] = useState(true);
 
   function flip_bool(){
     console.log("bool is fliping")
@@ -93,7 +93,7 @@ function Predict_page() {
 
   const handleAdd = (e) => {
     e.preventDefault();
-    if( temp != "" ){
+    if( temp !== "" ){
       setShowArr(( prev ) => {
         return [ ...prev, { id: Math.random(), payload: temp }];
       });
@@ -103,7 +103,7 @@ function Predict_page() {
 
   const handleRemove = (id) => {
     const tempArr = showArr.filter((item) => {
-      return item.id != id;
+      return item.id !== id;
     });
     setShowArr(tempArr);
   };

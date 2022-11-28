@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -8,8 +9,9 @@ export default function NavBar() {
         <h1>Ran_42</h1>
       </div>
       <div className="right-nav">
-        <p>Test</p>
-        <p>Analysis</p>
+        {/* <p>Test</p> */}
+        <Link to={"/predict"} className = "navbar_link" >Text</Link>
+        <Link to={"/anal"}  className = "navbar_link"  >Analysis</Link>
       </div>
     </div>
   );
