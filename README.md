@@ -1,4 +1,7 @@
 # kj_codeicon_final
 
+server:
+create an env and pip install requirements.txt
 
-khud se install karlo dependencies clone karke error dekhte dekhte
+client:
+npm install
